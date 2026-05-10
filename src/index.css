@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@200;300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Jost', system-ui, sans-serif;
+    background-color: #FFFFFF;
+    color: #1A1A1A;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4 { font-family: 'Cormorant Garamond', Georgia, serif; }
+
+  ::selection { background: #C9B8E8; color: #1A1A1A; }
+
+  ::-webkit-scrollbar { width: 2px; }
+  ::-webkit-scrollbar-track { background: #fff; }
+  ::-webkit-scrollbar-thumb { background: #C9B8E8; }
+}
+
+@layer components {
+  /* Logo */
+  .logo-script {
+    font-family: 'Dancing Script', cursive;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+  }
+
+  /* Buttons */
+  .btn-dark {
+    @apply inline-flex items-center justify-center px-8 py-3.5 bg-[#0D0D0D] text-white text-[10px] font-sans tracking-widest uppercase transition-all duration-300;
+    letter-spacing: 0.16em;
+  }
+  .btn-dark:hover {
+    @apply bg-[#1a1a1a];
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.2);
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center px-8 py-3.5 border border-[#0D0D0D] text-[#0D0D0D] text-[10px] font-sans tracking-widest uppercase transition-all duration-300;
+    letter-spacing: 0.16em;
+  }
+  .btn-outline:hover { @apply bg-[#0D0D0D] text-white; transform: translateY(-2px); }
+
+  .btn-wa {
+    @apply inline-flex items-center justify-center gap-2 px-8 py-3.5 text-white text-[10px] font-sans tracking-widest uppercase transition-all duration-300;
+    background: #25D366;
+    letter-spacing: 0.16em;
+  }
+  .btn-wa:hover { background: #1ebe5d; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(37,211,102,0.3); }
+
+  /* Section label */
+  .eyebrow {
+    @apply text-[9px] font-sans uppercase text-ezme-taupe;
+    letter-spacing: 0.34em;
+  }
+
+  /* Section title */
+  .section-heading {
+    @apply font-serif font-light text-[#0D0D0D];
+    font-size: clamp(32px, 5vw, 56px);
+    letter-spacing: -0.01em;
+    line-height: 1.08;
+  }
+
+  /* Divider */
+  .divider {
+    @apply block mx-auto mt-4 mb-0;
+    width: 32px;
+    height: 1px;
+    background: #C9B8E8;
+  }
+
+  /* Product card hover */
+  .card-lift {
+    transition: transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1), box-shadow 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+  }
+  .card-lift:hover { transform: translateY(-8px); box-shadow: 0 24px 48px rgba(0,0,0,0.1); }
+
+  /* Video overlay */
+  .video-overlay { background: linear-gradient(to top, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.08) 45%, rgba(0,0,0,0) 100%); }
+
+  /* Glass card */
+  .glass { background: rgba(255,255,255,0.88); backdrop-filter: blur(14px); }
+
+  /* Film grain overlay */
+  .film-grain {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.4'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 200px;
+    mix-blend-mode: overlay;
+  }
+
+  /* Editorial text clip */
+  .text-clip {
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  /* Magnetic link underline */
+  .link-line {
+    position: relative;
+    display: inline-block;
+  }
+  .link-line::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: currentColor;
+    transition: width 0.4s cubic-bezier(0.76, 0, 0.24, 1);
+  }
+  .link-line:hover::after { width: 100%; }
+}
+
+/* Smooth page-level transitions */
+@layer utilities {
+  .transition-400 { transition-duration: 400ms; }
+  .transition-600 { transition-duration: 600ms; }
+  .duration-1500 { transition-duration: 1500ms; }
+}
