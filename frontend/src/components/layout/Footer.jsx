@@ -22,7 +22,7 @@ export default function Footer() {
       {/* Main */}
       <div className="max-w-7xl mx-auto px-6 py-16 grid grid-cols-2 md:grid-cols-4 gap-10">
         <div className="col-span-2 md:col-span-1">
-          <span className="logo-script text-4xl text-white block mb-1">Ezme 🦋</span>
+          <img src="/logo.jpg" alt="EZME" className="h-14 w-14 rounded-full object-cover mb-3" />
           <p className="text-white/40 text-xs font-sans mb-4">Luxury Abayas · Made in Kenya</p>
           <p className="text-white/40 text-xs font-sans leading-relaxed">Handcrafted in Nairobi for the modern Muslim woman. Modest. Beautiful. Confident.</p>
         </div>

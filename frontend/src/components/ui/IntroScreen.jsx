@@ -28,15 +28,14 @@ export default function IntroScreen() {
             transition={{ duration: 0.9, ease: [0.25, 0.1, 0.25, 1], delay: 0.15 }}
             className="flex flex-col items-center gap-4"
           >
-            <span className="logo-script text-white text-6xl md:text-7xl">Ezme</span>
-            <motion.span
-              initial={{ opacity: 0, scale: 0.6 }}
+            <motion.img
+              src="/logo.jpg"
+              alt="EZME"
+              initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.5, duration: 0.6, type: 'spring', stiffness: 200 }}
-              className="text-4xl"
-            >
-              🦋
-            </motion.span>
+              transition={{ delay: 0.2, duration: 0.8, type: 'spring', stiffness: 120 }}
+              className="h-36 w-36 md:h-44 md:w-44 rounded-full object-cover shadow-2xl"
+            />
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}

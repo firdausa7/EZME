@@ -41,9 +41,8 @@ export default function AdminLogin() {
           <div className="p-8">
             {/* Logo */}
             <div className="text-center mb-8">
-              <div className="inline-flex items-center gap-1.5 mb-2">
-                <span className="logo-script text-3xl text-[#0D0D0D]">Ezme</span>
-                <span className="text-2xl">🦋</span>
+              <div className="inline-flex items-center justify-center mb-2">
+                <img src="/logo.jpg" alt="EZME" className="h-16 w-16 rounded-full object-cover shadow-lg" />
               </div>
               <p className="text-xs font-sans text-gray-400 tracking-widest uppercase" style={{ letterSpacing: '0.18em' }}>
                 Admin Dashboard

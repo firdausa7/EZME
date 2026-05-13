@@ -54,11 +54,8 @@ export default function Navbar() {
           </nav>
 
           {/* Logo — centred */}
-          <Link to="/" className="absolute left-1/2 -translate-x-1/2 flex items-center gap-1">
-            <span className={`logo-script text-3xl md:text-4xl transition-colors duration-300 ${transparent ? 'text-white' : 'text-ezme-black'}`}>
-              Ezme
-            </span>
-            <span className="text-xl md:text-2xl leading-none -mt-1">🦋</span>
+          <Link to="/" className="absolute left-1/2 -translate-x-1/2">
+            <img src="/logo.jpg" alt="EZME" className="h-10 md:h-12 w-10 md:w-12 rounded-full object-cover shadow-md" />
           </Link>
 
           {/* Right nav + icons */}
@@ -109,7 +106,7 @@ export default function Navbar() {
               className="fixed right-0 top-0 bottom-0 w-72 bg-white z-50 shadow-2xl flex flex-col"
             >
               <div className="flex items-center justify-between p-6 border-b border-gray-100">
-                <span className="logo-script text-3xl text-ezme-black">Ezme 🦋</span>
+                <img src="/logo.jpg" alt="EZME" className="h-9 w-9 rounded-full object-cover" />
                 <button onClick={() => setMobileOpen(false)}><X size={20} className="text-ezme-black" /></button>
               </div>
               <nav className="flex-1 p-6 space-y-1">

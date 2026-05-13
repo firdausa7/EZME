@@ -38,12 +38,12 @@ export default function AdminSidebar({ mobile }) {
       {/* Logo */}
       <div className={`flex items-center border-b border-white/10 h-16 ${collapsed ? 'justify-center px-2' : 'justify-between px-5'}`}>
         {!collapsed && (
-          <Link to="/" className="flex items-center gap-1.5">
-            <span className="logo-script text-white text-2xl">Ezme</span>
-            <span className="text-base">🦋</span>
+          <Link to="/" className="flex items-center gap-2">
+            <img src="/logo.jpg" alt="EZME" className="h-8 w-8 rounded-full object-cover" />
+            <span className="text-white/80 text-xs font-sans tracking-widest uppercase" style={{ letterSpacing: '0.18em' }}>EZME</span>
           </Link>
         )}
-        {collapsed && <span className="text-xl">🦋</span>}
+        {collapsed && <img src="/logo.jpg" alt="EZME" className="h-7 w-7 rounded-full object-cover" />}
         {!mobile && (
           <button onClick={toggleSidebar} className="text-white/40 hover:text-white transition-colors p-1">
             {collapsed ? <ChevronRight size={16} /> : <ChevronLeft size={16} />}
