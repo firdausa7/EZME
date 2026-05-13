@@ -5,16 +5,30 @@ import { products } from '../../data/products';
 
 export const useAdminAuth = create(
   persist(
-    (set, get) => ({
+    (set) => ({
       user: null,
       isAuthed: false,
+      token: null,
 
-      login: (email, password) => {
-        const u = ADMIN_USERS.find(u => u.email === email && u.password === password);
-        if (u) { set({ user: u, isAuthed: true }); return { ok: true }; }
-        return { ok: false, error: 'Invalid email or password' };
+      login: async (email, password) => {
+        try {
+          const { adminService } = await import('../../services/api.js');
+          const res = await adminService.login({ email, password });
+          const { user, token } = res.data;
+          localStorage.setItem('ezme_admin_token', token);
+          set({ user, isAuthed: true, token });
+          return { ok: true };
+        } catch (err) {
+          // Fallback to local check during development
+          const u = ADMIN_USERS.find(u => u.email === email && u.password === password);
+          if (u) { set({ user: u, isAuthed: true, token: null }); return { ok: true }; }
+          return { ok: false, error: err.response?.data?.error || 'Invalid email or password' };
+        }
       },
-      logout: () => set({ user: null, isAuthed: false }),
+      logout: () => {
+        localStorage.removeItem('ezme_admin_token');
+        set({ user: null, isAuthed: false, token: null });
+      },
     }),
     { name: 'ezme-admin-auth', partialize: s => ({ user: s.user, isAuthed: s.isAuthed }) }
   )

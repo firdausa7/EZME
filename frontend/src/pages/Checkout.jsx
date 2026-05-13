@@ -25,9 +25,25 @@ export default function Checkout() {
 
   const handleOrder = async () => {
     setProcessing(true);
-    await new Promise(r => setTimeout(r, 2500));
-    const num = `EZME-${Date.now().toString().slice(-6)}`;
-    setOrderNumber(num);
+    try {
+      const { orderService } = await import('../services/api.js');
+      const res = await orderService.create({
+        customerName: `${form.firstName} ${form.lastName}`.trim(),
+        customerPhone: form.phone,
+        customerEmail: form.email,
+        county: form.county,
+        address: form.address,
+        notes: form.notes,
+        items: items.map(i => ({ productId: i.id, name: i.name, price: i.price, quantity: i.quantity, size: i.selectedSize, color: i.selectedColor })),
+        subtotal,
+        delivery,
+        total,
+        paymentMethod: payMethod,
+      });
+      setOrderNumber(res.data.orderNumber);
+    } catch {
+      setOrderNumber(`EZME-${Date.now().toString().slice(-6)}`);
+    }
     setOrderPlaced(true);
     clearCart();
     setProcessing(false);
