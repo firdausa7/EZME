@@ -1,6 +1,5 @@
 import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { Link } from 'react-router-dom';
 
 export default function StoryBanner() {
   const ref = useRef(null);
@@ -39,7 +38,6 @@ export default function StoryBanner() {
           <p className="text-sm font-sans text-ezme-taupe leading-relaxed mb-10">
             From our signature classic cuts to bold statement pieces, each design is a celebration of faith, identity, and quiet elegance.
           </p>
-          <Link to="/about" className="btn-outline px-8 py-3.5 text-xs">Our Story</Link>
         </div>
       </motion.div>
     </section>
