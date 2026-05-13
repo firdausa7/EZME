@@ -16,7 +16,7 @@ export default function AdminLogin() {
     e.preventDefault();
     setLoading(true); setError('');
     await new Promise(r => setTimeout(r, 600));
-    const res = login(form.email, form.password);
+    const res = await login(form.email, form.password);
     if (res.ok) navigate('/admin');
     else { setError(res.error); setLoading(false); }
   };
@@ -104,10 +104,9 @@ export default function AdminLogin() {
 
             <div className="mt-6 pt-5 border-t border-gray-100 space-y-1.5">
               <p className="text-[10px] text-gray-400 font-sans text-center">Demo credentials</p>
-              <div className="grid grid-cols-2 gap-2">
+              <div className="grid grid-cols-1 gap-2">
                 {[
-                  { label: 'Super Admin', email: 'admin@ezme.ke', pw: 'Ezme@2025' },
-                  { label: 'Staff', email: 'staff@ezme.ke', pw: 'staff123' },
+                  { label: 'Super Admin', email: 'admin@ezme.ke', pw: 'ezme2025' },
                 ].map(c => (
                   <button key={c.label} onClick={() => setForm({ email: c.email, password: c.pw })}
                     className="text-[10px] font-sans text-gray-500 hover:text-gray-800 border border-gray-100 hover:border-gray-200 rounded-lg px-2 py-2 transition-all text-left">
