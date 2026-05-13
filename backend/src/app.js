@@ -23,7 +23,7 @@ app.get('/api/health', (_, res) => res.json({ status: 'ok', service: 'ezme-api' 
 
 app.use((err, req, res, next) => {
   console.error(err.stack);
-  res.status(500).json({ error: 'Internal server error' });
+  res.status(500).json({ error: err.message, stack: err.stack?.split('\n').slice(0, 5) });
 });
 
 export default app;
