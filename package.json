@@ -6,7 +6,8 @@
     "dev:backend": "cd backend && npm run dev",
     "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
     "install:all": "cd frontend && npm install && cd ../backend && npm install",
-    "seed": "cd backend && npm run seed"
+    "seed": "cd backend && npm run seed",
+    "vercel-install": "cd backend && npm install"
   },
   "devDependencies": {
     "concurrently": "^9.1.2"
