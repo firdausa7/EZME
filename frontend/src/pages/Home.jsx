@@ -19,7 +19,6 @@ export default function Home() {
       <EditorialStrip />
       <Collections />
       <BestSellers />
-      <Marquee dark />
       <StoryBanner />
       <Testimonials />
       <InstagramFeed />

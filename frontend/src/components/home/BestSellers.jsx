@@ -9,7 +9,7 @@ export default function BestSellers() {
   const filtered = active === 'all' ? products.filter(p => p.isBestSeller) : products.filter(p => p.isBestSeller && p.category === active);
 
   return (
-    <section className="py-20 md:py-28 bg-ezme-cream">
+    <section className="py-24 md:py-32 bg-ezme-cream">
       <div className="max-w-7xl mx-auto px-6">
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-4">
           <p className="eyebrow mb-3">Community Favourites</p>

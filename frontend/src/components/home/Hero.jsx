@@ -83,31 +83,25 @@ export default function Hero() {
             <span className="text-white/50 text-[9px] font-sans tracking-[0.32em] uppercase">New Arrivals</span>
           </motion.div>
 
-          <div className="overflow-hidden">
+          <div className="overflow-hidden mb-6">
             <motion.h1
               initial={{ y: '100%' }}
               animate={{ y: 0 }}
               transition={{ duration: 1.1, ease: [0.76, 0, 0.24, 1], delay: 0.55 }}
-              className="font-serif font-light text-white leading-none mb-2"
+              className="font-serif font-light text-white leading-none"
               style={{ fontSize: 'clamp(52px, 9vw, 120px)', letterSpacing: '-0.02em' }}
             >
-              Dressed in
+              Dressed in Grace
             </motion.h1>
           </div>
-          <div className="overflow-hidden">
-            <motion.div
-              initial={{ y: '100%' }}
-              animate={{ y: 0 }}
-              transition={{ duration: 1.1, ease: [0.76, 0, 0.24, 1], delay: 0.7 }}
-            >
-              <span
-                className="logo-script text-white block leading-none"
-                style={{ fontSize: 'clamp(64px, 11vw, 148px)' }}
-              >
-                Ezme 🦋
-              </span>
-            </motion.div>
-          </div>
+          <motion.img
+            src="/logo.jpg"
+            alt="EZME"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.9, ease: [0.25, 0.1, 0.25, 1], delay: 0.75 }}
+            className="w-20 h-20 md:w-24 md:h-24 rounded-full object-cover shadow-2xl border-2 border-white/20"
+          />
 
           <motion.div
             initial={{ scaleX: 0 }}

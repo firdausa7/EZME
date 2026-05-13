@@ -17,7 +17,7 @@ export default function StoryBanner() {
           autoPlay muted loop playsInline
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-black/10" />
+        <div className="absolute inset-0 bg-black/15" />
       </div>
 
       {/* Text side */}
@@ -26,29 +26,19 @@ export default function StoryBanner() {
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.9 }}
-        className="flex items-center bg-white px-8 md:px-16 py-16"
+        className="flex items-center bg-ezme-cream px-8 md:px-16 py-16"
       >
         <div className="max-w-sm">
           <p className="eyebrow mb-4">Our Story</p>
           <h2 className="font-serif text-4xl md:text-5xl font-light text-ezme-black mb-6 leading-tight">
-            Made with Love<br />in <span className="logo-script text-4xl md:text-5xl">Nairobi</span>
+            Made with Love<br />in Nairobi
           </h2>
           <p className="text-sm font-sans text-ezme-taupe leading-relaxed mb-5">
             Ezme was born from a simple belief — that modest fashion should never compromise on beauty. Every abaya is designed and crafted in Kenya for the confident, modern Muslim woman.
           </p>
-          <p className="text-sm font-sans text-ezme-taupe leading-relaxed mb-8">
+          <p className="text-sm font-sans text-ezme-taupe leading-relaxed mb-10">
             From our signature classic cuts to bold statement pieces, each design is a celebration of faith, identity, and quiet elegance.
           </p>
-
-          <div className="flex gap-8 mb-8">
-            {[{ n: '2,000+', l: 'Happy Customers' }, { n: '7+', l: 'Unique Designs' }, { n: '100%', l: 'Made in Kenya' }].map(s => (
-              <div key={s.l}>
-                <p className="logo-script text-3xl text-ezme-black">{s.n}</p>
-                <p className="text-[10px] font-sans text-ezme-taupe mt-0.5 tracking-wide uppercase" style={{ letterSpacing: '0.1em' }}>{s.l}</p>
-              </div>
-            ))}
-          </div>
-
           <Link to="/about" className="btn-outline px-8 py-3.5 text-xs">Our Story</Link>
         </div>
       </motion.div>

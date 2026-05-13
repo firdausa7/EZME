@@ -8,7 +8,7 @@ export default function Footer() {
       <div className="border-b border-white/10">
         <div className="max-w-7xl mx-auto px-6 py-14 flex flex-col md:flex-row items-center justify-between gap-8">
           <div>
-            <h3 className="font-serif text-3xl font-light mb-1">Join the <span className="logo-script text-3xl">Ezme</span> Circle 🦋</h3>
+            <h3 className="font-serif text-3xl font-light mb-1">Join the EZME Circle</h3>
             <p className="text-white/40 text-xs font-sans tracking-wide">Early access to drops, exclusive offers, style inspo.</p>
           </div>
           <form className="flex w-full md:w-auto" onSubmit={e => e.preventDefault()}>
